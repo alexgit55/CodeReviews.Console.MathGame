@@ -34,9 +34,8 @@ namespace MathGame.alexgit55
 
         internal void SetGameSettings()
         {
-            Console.Clear();
-            Console.WriteLine("Custom Game Settings");
-            Console.WriteLine("--------------------");
+            Console.WriteLine();
+            Console.WriteLine("Now, let's customize your game settings...");
             SetTotalQuestions();
             SetGameDifficulty();
         }
@@ -98,6 +97,7 @@ namespace MathGame.alexgit55
                 Console.WriteLine($"Question {i} of {TotalQuestions}");
                 var question = new MathQuestion(operation,LowerRange,UpperRange);
                 PlayerScore += question.GenerateMathQuestion();
+                Console.Clear();
             }
 
             Console.WriteLine($"Your final score was {PlayerScore} out of {TotalQuestions} correct.");

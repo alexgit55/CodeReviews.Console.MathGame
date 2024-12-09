@@ -15,10 +15,11 @@ namespace MathGame.alexgit55
             var history = new GameHistory();
             var keepPlayingGame = true;
             var GameMessage = "Press any key to continue";
+            AnsiConsole.Write(new Markup("[bold yellow]Hello[/] [red]World![/]"));
             while (keepPlayingGame)
             {
-                Console.Clear();
-                Console.WriteLine("Welcome to the Math Game!\n");
+                //Console.Clear();
+                
 
                 var usersChoice = AnsiConsole.Prompt(
                    new SelectionPrompt<Enums.MenuOptions>()
@@ -47,7 +48,8 @@ namespace MathGame.alexgit55
                         keepPlayingGame = false;
                         break;
                     default:
-                        Console.WriteLine($"You selected {usersChoice}");
+                        Console.Clear();
+                        Console.WriteLine($"You selected: {usersChoice}");
                         var GameRound = new GameRound((int)usersChoice);
                         GameRound.SetGameSettings();
                         GameRound.PlayGame();
